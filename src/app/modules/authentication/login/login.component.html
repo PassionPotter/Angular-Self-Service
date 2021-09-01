@@ -1,0 +1,77 @@
+<div class="layout-fill ng-scope layout-row">
+  <div class="ng-scope layout-row flex">
+    <div
+      class="
+        cover
+        hide-sm hide-xs
+        layout-align-start-center layout-row
+        flex-gt-md-70
+      "
+    >
+      <div class="cover-content flex-60">
+        <h1 class="md-display-2 cover-title">Self Service</h1>
+        <p class="md-headline">
+          Self Service is designed by the Mifos Initiative - a global community
+          that aims to speed-up the elimination of poverty by enabling
+          organizations to more effectively and efficiently deliver responsible
+          financial services to the world’s poor and unbanked.
+        </p>
+      </div>
+    </div>
+    <div class="login-container flex-gt-md-30 flex">
+      <!--       
+      <div
+        class="
+          md-padding
+          translate-container
+          layout-align-end-stretch layout-row
+        "
+      ></div> -->
+      <div style="margin-top: 163.4px" class="logo layout-margin flex">
+        <img width="200px" src="assets/images/MifosX_logo.png" />
+        <h1 class="md-title ng-binding">Login to your account</h1>
+      </div>
+      <div class="login-form layout-padding flex-80">
+        <form [formGroup]="loginForm" (submit)="login()">
+          <mat-form-field style="width: 100%">
+            <mat-label>Username</mat-label>
+            <input
+              formControlName="username"
+              type="text"
+              name="username"
+              matInput
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%">
+            <mat-label>Password</mat-label>
+            <input
+              formControlName="password"
+              type="password"
+              name="password"
+              matInput
+            />
+          </mat-form-field>
+          <section class="layout-align-start-stretch layout-column">
+            <button
+              class="md-primary md-raised md-button md-ink-ripple submit-button"
+              type="submit"
+              [disabled]="isLoading"
+            >
+              LOGIN
+            </button>
+            <a
+              routerLink="/auth/forgot"
+              class="md-default md-button md-ink-ripple"
+              >Forgot Password</a
+            >
+            <a
+              routerLink="/auth/register"
+              class="md-primary md-button md-ink-ripple blue-text"
+              >New User? Create an Account</a
+            >
+          </section>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

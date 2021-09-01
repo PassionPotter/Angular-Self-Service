@@ -1,0 +1,13 @@
+.mat-list-custom-container {
+  overflow-y: auto;
+  height: 80%;
+}
+
+mat-nav-list a {
+  border-bottom: 1px solid #00000014;
+
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+}

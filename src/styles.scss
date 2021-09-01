@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "/src/assets/stylesheets/_angularJs_material";
+@import "/src/assets/stylesheets/_custom";
+@import "/src/assets/stylesheets/md-data-table";
+@import "/src/assets/stylesheets/_table";
+@import "/src/assets/stylesheets/404";
+@import "/src/assets/stylesheets/font-awesome";
+@import "/src/assets/stylesheets/index";
+@import "/src/assets/stylesheets/nv.d3";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(30, 136, 229) !important;
+}
+
+.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: rgb(30, 136, 229) !important;
+}
+
+// error form field text color
+.mat-form-field.mat-form-field-invalid {
+  .mat-form-field-label {
+    color: inherit;
+  }
+  .mat-form-field-ripple {
+    background-color: #f44336 !important;
+  }
+}

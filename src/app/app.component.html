@@ -1,0 +1,8 @@
+<div
+  *ngIf="isLoading"
+  class="layout-align-center-center layout-row spinner-container"
+  aria-hidden="true"
+>
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>
+<router-outlet></router-outlet>

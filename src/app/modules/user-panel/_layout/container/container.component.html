@@ -1,0 +1,22 @@
+<div class="custom-main-container" [class.is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="custom-sidenav-container">
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [opened]="!mobileQuery.matches"
+      [fixedInViewport]="mobileQuery.matches"
+    >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <app-toolbar
+        [mobileQueryMatches]="mobileQuery.matches"
+        (sideBarToggleEmitter)="snav.toggle()"
+      ></app-toolbar>
+      <div class="p-4">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

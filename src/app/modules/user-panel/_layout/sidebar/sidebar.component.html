@@ -1,0 +1,30 @@
+<div class="sidenav-header layout-padding layout-align-start-end layout-row">
+  <div class="layout-row flex">
+    <div class="sidenav-content">
+      <mat-icon aria-hidden="false" aria-label="Person icon">person</mat-icon>
+      <h1 class="sidenav-title md-title ng-binding">Welcome, Antonio</h1>
+    </div>
+  </div>
+</div>
+<div class="mat-list-custom-container">
+  <mat-nav-list>
+    <a
+      mat-list-item
+      [routerLink]="navItem.routerLink"
+      *ngFor="let navItem of navItems; let i = index"
+    >
+      <mat-divider *ngIf="i != 0"></mat-divider>
+
+      <div class="d-flex">
+        <mat-icon
+          aria-hidden="false"
+          [attr.aria-label]="navItem.name + ' icon'"
+          >{{ navItem.icon }}</mat-icon
+        >
+        <span class="ms-2">
+          {{ navItem.name }}
+        </span>
+      </div>
+    </a>
+  </mat-nav-list>
+</div>

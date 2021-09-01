@@ -1,0 +1,227 @@
+<div class="row">
+  <div class="col-sm-12 col-md-3">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Total Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <h1 class="md-display-2 text-center no-margin">240</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Loan Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <h1 class="md-display-2 text-center no-margin">223</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Savings Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <h1 class="md-display-2 text-center no-margin">15</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Share Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <h1 class="md-display-2 text-center no-margin">2</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-sm-12 col-md-6">
+    <mat-card class="savings-total-card md-padding">
+      <!-- <mat-card-header> -->
+      <div class="my-3 d-flex justify-content-between">
+        <h2>Total Accounts</h2>
+        <h2 class="card-total text-right">44039.32</h2>
+      </div>
+      <!-- </mat-card-header> -->
+    </mat-card>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <mat-card class="loan-total-card md-padding">
+      <!-- <mat-card-header> -->
+      <div class="my-3 d-flex justify-content-between">
+        <h2>Total Loan</h2>
+        <h2 class="card-total text-right">44039.32</h2>
+      </div>
+      <!-- </mat-card-header> -->
+    </mat-card>
+  </div>
+</div>
+<!-- graphs  -->
+<div class="row mt-3">
+  <div class="col-sm-12 col-md-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Loan Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content
+        ><div style="display: block">
+          <canvas
+            baseChart
+            [data]="[100, 70, 400]"
+            [labels]="['Download Sales', 'In Store Sales', 'Mail Sales']"
+            [chartType]="'pie'"
+            [options]="{
+              responsive: true
+            }"
+            [plugins]="[]"
+            [legend]="true"
+          >
+          </canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Savings Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-card-content
+          ><div style="display: block">
+            <canvas
+              baseChart
+              [data]="[600, 50, 200]"
+              [labels]="['Download Sales', 'In Store Sales', 'Mail Sales']"
+              [chartType]="'pie'"
+              [options]="{
+                responsive: true
+              }"
+              [plugins]="[]"
+              [legend]="true"
+            >
+            </canvas>
+          </div>
+        </mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Share Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-card-content
+          ><div style="display: block">
+            <canvas
+              baseChart
+              [data]="[300, 500, 100]"
+              [labels]="['Download Sales', 'In Store Sales', 'Mail Sales']"
+              [chartType]="'pie'"
+              [options]="{
+                responsive: true
+              }"
+              [plugins]="[]"
+              [legend]="true"
+            >
+            </canvas>
+          </div>
+        </mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Graph For Transaction History </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="py-3">
+      <form>
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <mat-form-field class="w-100">
+              <mat-label>Account Number</mat-label>
+              <input #accountNumber type="text" name="accountNumber" matInput />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <mat-form-field class="w-100">
+              <mat-label>Account Type</mat-label>
+              <mat-select #accountType>
+                <mat-option value="loan">Loan </mat-option>
+                <mat-option value="savings">Savings </mat-option>
+                <mat-option value="share">Share </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <mat-form-field
+              [hidden]="
+                !accountType?.value?.length || !accountNumber?.value?.length
+              "
+              class="w-100"
+            >
+              <mat-label>Transaction Type</mat-label>
+              <mat-select #transactionType>
+                <mat-option value="repayment"
+                  >Repayment (at time of disbursment)
+                </mat-option>
+                <mat-option value="disbursment">Disbursment </mat-option>
+                <mat-option value="accrual">Accrual </mat-option>
+                <mat-option value="repayment">Repayment </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+      <!-- generate graph button  -->
+      <div>
+        <button
+          *ngIf="accountType?.value?.length && accountNumber?.value?.length"
+          [disabled]="!transactionType?.value?.length"
+          mat-raised-button
+          color="primary"
+          (click)="barGraphContainer.style.display = 'block'"
+        >
+          Generate Graph
+        </button>
+      </div>
+
+      <!-- bar graph  -->
+      <div style="display: none" #barGraphContainer>
+        <div style="display: block">
+          <canvas
+            baseChart
+            [datasets]="[
+              { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+              { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+            ]"
+            [labels]="['2006', '2007', '2008', '2009', '2010', '2011', '2012']"
+            [options]="{ responsive: true }"
+            [plugins]="[]"
+            [legend]="true"
+            [chartType]="'bar'"
+          >
+          </canvas>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
